@@ -1,11 +1,12 @@
 const { Client } = require('pg');
+const config = require('../config/config.json');
 
 const client = new Client({
-    user: 'postgres', // Change this
-    host: 'localhost',
-    database: 'dummy_scrap',   // Change this
-    password: 'admin', // Change this
-    port: 5432,
+    user: config.dbUser,
+    host: config.dbHost,
+    database: config.dbName,
+    password: config.dbPassword,
+    port: config.dbPort,
 });
 
 client.connect()

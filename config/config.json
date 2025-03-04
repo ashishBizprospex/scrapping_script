@@ -1,0 +1,7 @@
+{
+    "dbUser": "postgres",
+    "dbHost": "localhost",
+    "dbName": "dummy_scrap",
+    "dbPassword": "admin",
+    "dbPort": 5432
+}
