@@ -97,7 +97,11 @@ const client = require('./db');
 const inputs = require('./canvas.json');
 
 async function scrapeData() {
-    const browser = await chromium.launch({ headless: true }); // No need for Chrome installation
+    const browser = await chromium.launch({
+        headless: true, // Ensure headless mode
+        args: ['--no-sandbox', '--disable-setuid-sandbox'] // Avoid extra dependencies
+    });
+
     const page = await browser.newPage();
 
     for (let i = 0; i < inputs.length; i++) {
